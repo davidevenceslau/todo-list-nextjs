@@ -1,5 +1,5 @@
 <!-- ABOUT THE PROJECT -->
-# Portal Médico (Nova Experiência)
+# Lista de Tarefas em NextJs
 
 ## Sobre o projeto
 O projeto Portal Médico, tem como propósito trazer uma nova experiência, objetiva e satisfatória na busca pelas informações dos resultados de exames dos pacientes.
