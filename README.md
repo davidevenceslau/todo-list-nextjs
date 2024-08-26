@@ -9,20 +9,20 @@ Neste momento está na fase MVP, contemplando as funcionalidades mais básicas, 
 Por enquanto está sendo possível o acesso local, porém assim que for desenvolvido o acesso multiusuário, subirei e disponibilizarei em um link público.
 
 - Nota:
-Quanto ao layout, me inspirei em um que encontrei na comunidade do Figma, que pode ser utilizado e publicado, link <a href="https://www.figma.com/design/Jqrkvl2WBjzwFHzIayAcG2/Interactive-To-Do-List-Prototype-with-variables-(Community)?node-id=13-1596&t=TKVcEgdj7G00w3di-0" target="_blank">aqui</a>.
+Quanto ao layout, me inspirei em um que encontrei na comunidade do Figma, que pode ser utilizado e publicado, link [aqui](https://www.figma.com/design/Jqrkvl2WBjzwFHzIayAcG2/Interactive-To-Do-List-Prototype-with-variables-(Community)?node-id=13-1596&t=TKVcEgdj7G00w3di-0).
 
 <!-- GETTING STARTED -->
 
 ### Tecnologias utilizadas:
 - [Git](https://git-scm.com).: Sistema de controle de versões distribuído
 - [Node](https://nodejs.org/en/).: Ambiente de tempo de execução JavaScript multiplataforma e de código aberto
-- [Json Server](https://www.npmjs.com/package/json-server).: Simulador de API RestFull.
+- [Json Server](https://www.npmjs.com/package/json-server).: Simulador de API Rest.
 - [Next.js 14](https://nextjs.org/).: Framework com utilização do React.js no servidor.
 - [Tailwind CSS](https://tailwindcss.com/).: Ferramenta utilitária para estilizações CSS.
 - [React.js 18](https://reactjs.org/).: Criação de Interfaces e Componentes
 - [Typescript](https://www.typescriptlang.org/).: Extensão do JavaScript, adiciona tipagem estática à linguagem
-- [ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).: Ferramenta de análise de código
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=SimonSiefke.prettier-vscode).: Ferramenta de análise de código
+- [ESlint](https://eslint.org/).: Ferramenta de análise de código
+- [Prettier](https://prettier.io/).: Ferramenta para formatação de código
 
 ### Pré requisitos:
 - [Node 18/19+](https://nodejs.org);
