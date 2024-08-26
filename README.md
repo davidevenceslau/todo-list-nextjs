@@ -2,15 +2,23 @@
 # Lista de Tarefas em NextJs
 
 ## Sobre o projeto
-O projeto Portal Médico, tem como propósito trazer uma nova experiência, objetiva e satisfatória na busca pelas informações dos resultados de exames dos pacientes.
+O projeto Lista de Tarefas (To-do List), tem como o principal propósito aplicar os novos recursos do Next.js, Tailwind CSS para aplicar estilizações dos templates, boas práticas voltadas padrões, qualidade de código (Código limpo, Princípios SOLID, Design Patterns), performance, segurança e experiência do usuário.
+
+Neste momento está na fase MVP, contemplando as funcionalidades mais básicas, sendo elas: Cadastro de tarefas, Ordernação pelas mais recentes, Marcar tarefas concluídas e Modo Escuro. No decorrer haverá implementações técnicas como Testes Unitários, DevOps etc., e novas funcionalidades serão implementadas, como Remover/editar tarefa, Agrupamento por dia, Categoria/filtro por categoria etc.
+
+Por enquanto está sendo possível o acesso local, porém assim que for desenvolvido o acesso multi usuários, subirei e disponibilizarei em um link público.
+
+- Nota:
+Quanto ao layout, me inspirei em um disponibilizado na comunidade do Figma, link [aqui].(https://www.figma.com/design/Jqrkvl2WBjzwFHzIayAcG2/Interactive-To-Do-List-Prototype-with-variables-(Community)?node-id=13-1596&t=TKVcEgdj7G00w3di-0):
 
 <!-- GETTING STARTED -->
 
 ### Tecnologias utilizadas:
 - [Git](https://git-scm.com).: Sistema de controle de versões distribuído
 - [Node](https://nodejs.org/en/).: Ambiente de tempo de execução JavaScript multiplataforma e de código aberto
-- [Next.js 14](https://nextjs.org/).: Framework com Next.js que rodar no Servidor.
-- [Json Server](https://www.npmjs.com/package/json-server).: Simulador API RestFull.
+- [Json Server](https://www.npmjs.com/package/json-server).: Simulador de API RestFull.
+- [Next.js 14](https://nextjs.org/).: Framework com utilização do React.js no servidor.
+- [Tailwind CSS](https://tailwindcss.com/).: Ferramenta utilitária para estilizações CSS.
 - [React.js 18](https://reactjs.org/).: Criação de Interfaces e Componentes
 - [Typescript](https://www.typescriptlang.org/).: Extensão do JavaScript, adiciona tipagem estática à linguagem
 - [ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).: Ferramenta de análise de código
