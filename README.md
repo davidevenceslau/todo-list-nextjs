@@ -9,7 +9,7 @@ Neste momento está na fase MVP, contemplando as funcionalidades mais básicas, 
 Por enquanto está sendo possível o acesso local, porém assim que for desenvolvido o acesso multiusuário, subirei e disponibilizarei em um link público.
 
 - Nota:
-Quanto ao layout, me inspirei em um que encontrei na comunidade do Figma, que pode ser utilizado e publicado, link [aqui](https://www.figma.com/design/Jqrkvl2WBjzwFHzIayAcG2/Interactive-To-Do-List-Prototype-with-variables-(Community)?node-id=13-1596&t=TKVcEgdj7G00w3di-0).
+Quanto ao layout, me inspirei em um que encontrei na comunidade do Figma, que pode ser utilizado e publicado, <a href="https://www.figma.com/design/Jqrkvl2WBjzwFHzIayAcG2/Interactive-To-Do-List-Prototype-with-variables-(Community)?node-id=13-1596&t=TKVcEgdj7G00w3di-0" target="_blank">link aqui</a>.
 
 <!-- GETTING STARTED -->
 
