@@ -1,0 +1,31 @@
+
+input[type=checkbox] {
+  display:none;
+}
+
+input[type=checkbox] + label
+ {
+     padding: 0 0 0 0px;
+     width: 30px;
+     height: 35px;
+     display:inline-block;
+     background-size: 30px 35px;
+     background-repeat: no-repeat;
+     background-image: url("/check-box.png");
+ }
+ 
+ input[type=checkbox]:checked + label, input[value=checked] + label
+  {
+    padding: 0 0 0 0px;
+    width: 35px;
+    height: 35px;
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    display:inline-block;
+    background-image: url("/check-box-checked.png");
+  }
+
+  input[type=checkbox]:disabled + label
+  {
+    opacity: 0.5;
+  }
