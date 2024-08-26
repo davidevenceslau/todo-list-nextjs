@@ -3,6 +3,18 @@
 @tailwind utilities;
 
 @layer components {
+  .todo-list-section-container {
+    height: calc(100% - (130px + 140px + 40px)); /* subtracted height from header, footer and padding space */
+    @media (min-width: 575.98px) {
+      height: calc(100% - (90px + 140px + 40px));
+    }
+    @media (min-width: 768px) {
+      height: calc(100% - (90px + 86px + 40px));
+    }
+  }
+  .todo-list-section-content {
+    @apply m-6;        
+  }
   .todo-list-spacing-x {
     @apply p-6;
   }
@@ -12,4 +24,20 @@
   .todo-list-border-dark-dashed {
     @apply border-neutral-400 border-dashed;
   }
+}
+
+/* Scroll bar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

@@ -1,13 +1,13 @@
-import { TodoHeader } from "@/components/TodoHeader";
-import { TodoItems } from "@/components/TodoItems";
-import { TodoAddItem } from "@/components/TodoAddItem";
+import { Header } from "@/components/Header";
+import { ListTasks } from "@/components/TodoList/ListTasks";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="w-[80%] h-[500px] md:w-[600px] m-auto px-1 bg-white dark:bg-dark-background shadow-lg relative">
-        <TodoHeader />
-        <TodoItems />
-        <TodoAddItem />
+    <main className="w-[90%] h-[90%] min-w-[320px] md:w-[80%] md:h-[80%] m-auto px-1 bg-white dark:bg-dark-background shadow-lg relative">
+      <Header />
+      <ListTasks />
+      <Footer />
     </main>
   );
 }
