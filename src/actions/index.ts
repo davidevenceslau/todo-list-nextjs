@@ -6,7 +6,7 @@ import { ApiResponse, ErrorApi } from "@/api/types";
 import { apiMessages } from "@/api/apiMessages";
 import { API, THEME } from "@/constants";
 import { cookies } from "next/headers";
-import { KEY_COOKIE } from "@/constants/cookie";
+import { KEY_COOKIE } from "@/constants";
 
 export const setThemeCookie = async (theme: string) => {
   if (theme === THEME.LIGHT || theme === THEME.DARK) {

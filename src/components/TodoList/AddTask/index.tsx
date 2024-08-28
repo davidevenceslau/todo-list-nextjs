@@ -2,7 +2,7 @@
 
 import { useSubmitFormAction } from "@/hooks/useSubmitFormAction";
 import { useTodoList } from "@/contexts/TodoListContext/useTodoList";
-import { DELAY_API_TIME_MS } from "@/constants/delayApiTimeMs";
+import { DELAY_API_TIME_MS } from "@/constants";
 import { AddTaskForm } from "./AddTaskForm";
 
 export function AddTask() {

@@ -5,7 +5,7 @@ import { GoTrash } from "react-icons/go";
 import { useToastNotificationApi } from "@/hooks/useToastNotificationApi";
 import { ModalConfirm } from "@/components/modais/ModalConfirm";
 import { useSubmitFormAction } from "@/hooks/useSubmitFormAction";
-import { DELAY_API_TIME_MS } from "@/constants/delayApiTimeMs";
+import { DELAY_API_TIME_MS } from "@/constants";
 import { useTodoList } from "@/contexts/TodoListContext/useTodoList";
 
 type RemoveTaskProps = {
