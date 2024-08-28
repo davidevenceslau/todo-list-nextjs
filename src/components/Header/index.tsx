@@ -1,7 +1,7 @@
 "use client";
 
 import { useTodoList } from "@/contexts/TodoListContext/useTodoList";
-import { ThemeToggle } from "../ThemeToggle";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   const { tasks } = useTodoList();

@@ -1,4 +1,4 @@
-import { DELAY_API_TIME_MS } from "@/constants/delayApiTimeMs";
+import { DELAY_API_TIME_MS } from "@/constants";
 import { useTodoList } from "@/contexts/TodoListContext/useTodoList";
 import { useSubmitFormAction } from "@/hooks/useSubmitFormAction";
 

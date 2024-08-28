@@ -70,8 +70,9 @@ export function CompleteTask({ task, tooglePendingTask }: CompleteTaskProps) {
           onClick={(e) => onTaskCheckCompleted(e)}
         />
         <label
-          className="min-w-10"
+          className={`min-w-10 ${!task.completed ? "cursor-pointer" : "cursor-default"}`}
           htmlFor={`checkbox-task-${task.id}`}
+          title={!task.completed ? "Concluir tarefa" : ""}
         ></label>
       </form>
     </>
