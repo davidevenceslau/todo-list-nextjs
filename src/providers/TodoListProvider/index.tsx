@@ -3,7 +3,7 @@
 import { ReactNode } from "react";
 import { wait } from "@/utils/misc";
 import { TodoListContext } from "@/contexts/TodoListContext";
-import { createTask, deleteTask, toggleTaskCompleted } from "@/actions";
+import { createTask, deleteTask, completeTask } from "@/actions";
 import { ApiResponse } from "@/api/types";
 
 type TodoListProviderProps = {
@@ -32,7 +32,7 @@ export function TodoListProvider({ children, tasks }: TodoListProviderProps) {
     if (delayMs) {
       await wait(delayMs);
     }
-    const response = await toggleTaskCompleted(formData);
+    const response = await completeTask(formData);
     return response;
   };
 

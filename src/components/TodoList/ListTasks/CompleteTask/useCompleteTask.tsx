@@ -4,14 +4,15 @@ import { useSubmitFormAction } from "@/hooks/useSubmitFormAction";
 
 export function useCompleteTask() {
   const { completedTask } = useTodoList();
-  const { action, pending, state, onSubmit } = useSubmitFormAction(
+  const { action, state, onSubmit, pending } = useSubmitFormAction(
     completedTask,
     DELAY_API_TIME_MS,
   );
+
   return {
     action,
-    onSubmit,
     state,
+    onSubmit,
     pending,
   };
 }
