@@ -56,7 +56,7 @@ export function ModalConfirm({
             </h3>
           )}
           <div className="mt-2">
-            <p className="text-sm text-gray-500 whitespace-pre-line">
+            <p className="text-sm text-gray-500 whitespace-pre-line text-[1rem]">
               {message}
             </p>
           </div>
