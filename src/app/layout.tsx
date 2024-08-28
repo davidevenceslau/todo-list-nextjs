@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "To-do List in Next 14",
+  title: "Lista de Tarefas",
   description: "Next 14, Tailwind, Dark Mode",
 };
 
