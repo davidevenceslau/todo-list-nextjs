@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { ApiResponse } from "@/api/types";
 import { useToastNotificationApi } from "@/hooks/useToastNotificationApi";
 import { Button } from "@/components/common/Button";
-import { ToastNotification } from "@/components/ToastNotification";
 
 type AddTaskFormProps = {
   action: (payload: FormData) => void;
@@ -18,8 +17,7 @@ export function AddTaskForm({
   pending,
 }: AddTaskFormProps) {
   const [value, setValue] = useState("");
-  const { sendToastNotification, message, type } =
-    useToastNotificationApi(state);
+  useToastNotificationApi(state);
 
   const handleOnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -57,11 +55,6 @@ export function AddTaskForm({
           />
         </div>
       </form>
-      <ToastNotification
-        send={sendToastNotification}
-        message={message}
-        type={type}
-      />
     </>
   );
 }

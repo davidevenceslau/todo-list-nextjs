@@ -10,8 +10,6 @@ const config: Config = {
         "body-dark-background": "#25282A",
         primay: "#DE7184",
         "primay-highlight": "#EE889A",
-        "primay-dark": "#EE889A",
-        "primay-dark-highlight": "#DE7184",
         "text-black": "#1E2122",
         "secondary-text": "#B7BCBF",
         "secondary-dark": "#7A8185",

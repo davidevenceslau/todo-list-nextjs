@@ -4,7 +4,6 @@ import { revalidatePath } from "next/cache";
 import { apiError } from "@/api/apiError";
 import { ApiResponse, ErrorApi } from "@/api/types";
 import { apiMessages } from "@/api/apiMessages";
-import { Task } from "./types";
 import { API, THEME } from "@/constants";
 import { cookies } from "next/headers";
 import { KEY_COOKIE } from "@/constants/cookie";
@@ -69,9 +68,22 @@ export const toggleTaskCompleted = async (
     });
     if (!response.ok) throw new Error(apiMessages.error.completedTask);
     const data = (await response.json()) as Task;
-    console.log("revalidatePath /");
     revalidatePath("/");
     return { data, success: true, message: apiMessages.success.completedTask };
+  } catch (error: unknown) {
+    return apiError(error as ErrorApi);
+  }
+};
+
+export const deleteTask = async (formData: FormData): Promise<ApiResponse> => {
+  try {
+    const id = formData.get("id") as string;
+
+    const response = await fetch(`${API}/${id}`, { method: "DELETE" });
+    if (!response.ok) throw new Error(apiMessages.error.deleteTask);
+    const data = (await response.json()) as Task[];
+    revalidatePath("/");
+    return { data, success: true, message: apiMessages.success.removeTask };
   } catch (error: unknown) {
     return apiError(error as ErrorApi);
   }

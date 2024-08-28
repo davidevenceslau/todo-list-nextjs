@@ -2,6 +2,7 @@
 
 import { useSubmitFormAction } from "@/hooks/useSubmitFormAction";
 import { useTodoList } from "@/contexts/TodoListContext/useTodoList";
+import { DELAY_API_TIME_MS } from "@/constants/delayApiTimeMs";
 import { AddTaskForm } from "./AddTaskForm";
 
 export function AddTask() {
@@ -9,7 +10,7 @@ export function AddTask() {
 
   const { action, state, pending, onSubmit } = useSubmitFormAction(
     addTask,
-    1500,
+    DELAY_API_TIME_MS,
   );
 
   return (
