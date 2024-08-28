@@ -12,7 +12,7 @@ type CompleteTaskProps = {
 };
 
 export function CompleteTask({ task, tooglePendingTask }: CompleteTaskProps) {
-  const { action, onSubmit, state, pending } = useCompleteTask();
+  const { action, state, onSubmit, pending } = useCompleteTask();
   useToastNotificationApi(state, TypeToSenderToastNotificationApi.ERROR);
 
   const onTaskCheckCompleted = (event: React.MouseEvent<HTMLInputElement>) => {

@@ -15,7 +15,7 @@ type RemoveTaskProps = {
 
 export function RemoveTask({ task, tooglePendingTask }: RemoveTaskProps) {
   const { removeTask } = useTodoList();
-  const { action, pending, state, onSubmit } = useSubmitFormAction(
+  const { action, state, onSubmit, pending } = useSubmitFormAction(
     removeTask,
     DELAY_API_TIME_MS,
   );
