@@ -1,7 +1,5 @@
 import { ApiResponse } from "@/api/types";
 import { fetchTasks } from "@/actions";
-import { Task } from "@/actions/types";
-
 import { ThemeProvider } from "./ThemeProvider";
 import { TodoListProvider } from "./TodoListProvider";
 

@@ -1,11 +1,10 @@
 "use client";
 
 import { ReactNode } from "react";
-import { TodoListContext } from "@/contexts/TodoListContext";
-import { Task } from "@/actions/types";
-import { createTask, toggleTaskCompleted } from "@/actions";
-import { ApiResponse } from "@/api/types";
 import { wait } from "@/utils/misc";
+import { TodoListContext } from "@/contexts/TodoListContext";
+import { createTask, deleteTask, toggleTaskCompleted } from "@/actions";
+import { ApiResponse } from "@/api/types";
 
 type TodoListProviderProps = {
   children: ReactNode;
@@ -37,8 +36,16 @@ export function TodoListProvider({ children, tasks }: TodoListProviderProps) {
     return response;
   };
 
-  const removeTask = () => {
-    // TODO addTask
+  const removeTask = async (
+    state: object,
+    formData: FormData,
+    delayMs?: number,
+  ) => {
+    if (delayMs) {
+      await wait(delayMs);
+    }
+    const response = await deleteTask(formData);
+    return response;
   };
 
   return (

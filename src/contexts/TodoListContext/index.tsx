@@ -1,6 +1,5 @@
 "use client";
 
-import { Task } from "@/actions/types";
 import { ApiResponse } from "@/api/types";
 import { createContext } from "react";
 
@@ -16,7 +15,11 @@ export type TodoListContextProps = {
     formData: FormData,
     delay?: number,
   ) => Promise<ApiResponse>;
-  removeTask: () => void;
+  removeTask: (
+    state: object,
+    formData: FormData,
+    delay?: number,
+  ) => Promise<ApiResponse>;
 };
 
 export const TodoListContext = createContext<TodoListContextProps>(
