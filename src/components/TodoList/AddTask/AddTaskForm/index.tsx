@@ -46,6 +46,7 @@ export function AddTaskForm({
             value={value}
             onChange={(e) => setValue(e.target.value)}
             readOnly={pending}
+            autoComplete="off"
           />
           <Button
             label={pending ? "" : "Adicionar tarefa"}
