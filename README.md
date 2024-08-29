@@ -2,7 +2,7 @@
 # Lista de Tarefas em NextJs
 
 ## Sobre o projeto
-O projeto Lista de Tarefas (To-do List), tem como o principal propósito aplicar os novos recursos do Next.js, Tailwind CSS para aplicar estilizações dos templates, boas práticas voltadas padrões, qualidade de código (Código limpo, Princípios SOLID, Design Patterns), performance, segurança e experiência do usuário.
+O projeto Lista de Tarefas (To-do List), tem como o principal propósito aplicar os novos recursos do Next.js, está sendo utilizado Tailwind CSS para aplicar estilizações dos templates e aplicado boas práticas voltadas padrões, qualidade de código (Código limpo, Princípios SOLID, Design Patterns), performance, segurança e experiência do usuário.
 
 Neste momento está na fase MVP, contemplando as funcionalidades básicas, sendo: Cadastro e exclusão de tarefas, Ordernação pelas mais recentes, Marcar tarefas concluídas e Modo Escuro. No decorrer haverá implementações técnicas como Testes Unitários, DevOps etc., e novas funcionalidades serão implementadas, como Editar tarefa, Agrupamento por dia, Categoria/filtro por categoria etc.
 
