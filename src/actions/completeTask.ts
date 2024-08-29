@@ -15,6 +15,9 @@ export const completeTask = async (
 
     const response = await fetch(`${API}/${id}`, {
       method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
         task: task,
         createDate: createDate,
