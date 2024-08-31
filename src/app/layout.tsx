@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ToastContainer } from "react-toastify";
 import { GlobalProviders } from "@/providers";
 import { kalam } from "@/fonts";
+import AnalysisAndMonitoringTools from "@/components/misc/AnalysisAndMonitoringTools.ts";
 import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 
@@ -21,6 +22,7 @@ export default async function RootLayout({
         className={`${kalam.className} flex h-screen bg-body-background dark:bg-body-dark-background`}
       >
         <GlobalProviders>{children}</GlobalProviders>
+        <AnalysisAndMonitoringTools />
         <ToastContainer />
       </body>
     </html>
