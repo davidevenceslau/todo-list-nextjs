@@ -1,9 +1,15 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import { wait } from "@/utils/misc";
 import { TodoListContext } from "@/contexts/TodoListContext";
-import { createTask, deleteTask, completeTask } from "@/actions";
+import {
+  createTask,
+  deleteTask,
+  completeTask,
+  hasUserHashCookie,
+  generateUserHashCookie,
+} from "@/actions";
 import { ApiResponse } from "@/api/types";
 
 type TodoListProviderProps = {
@@ -47,6 +53,16 @@ export function TodoListProvider({ children, tasks }: TodoListProviderProps) {
     const response = await deleteTask(formData);
     return response;
   };
+
+  const handleUserHash = async () => {
+    if (!(await hasUserHashCookie())) {
+      await generateUserHashCookie();
+    }
+  };
+
+  useEffect(() => {
+    handleUserHash();
+  }, []);
 
   return (
     <TodoListContext.Provider
