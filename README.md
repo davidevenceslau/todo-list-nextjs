@@ -16,7 +16,6 @@ Quanto ao layout, me inspirei em um que encontrei na comunidade do Figma, que po
 ### Tecnologias utilizadas:
 - [Git](https://git-scm.com).: Sistema de controle de versões distribuído
 - [Node](https://nodejs.org/en/).: Ambiente de tempo de execução JavaScript multiplataforma e de código aberto
-- [Json Server](https://www.npmjs.com/package/json-server).: Simulador de API Rest.
 - [Next.js 14](https://nextjs.org/).: Framework com utilização do React.js no servidor.
 - [Tailwind CSS](https://tailwindcss.com/).: Ferramenta utilitária para estilizações CSS.
 - [React.js 18](https://reactjs.org/).: Criação de Interfaces e Componentes
