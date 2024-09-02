@@ -1,5 +1,3 @@
-import { ApiResponse } from "@/api/types";
-import { fetchTasks } from "@/actions";
 import { ThemeProvider } from "./ThemeProvider";
 import { TodoListProvider } from "./TodoListProvider";
 
@@ -8,8 +6,6 @@ type Props = {
 };
 
 export async function GlobalProviders({ children }: Props) {
-  const response: ApiResponse = await fetchTasks();
-
   return (
     <ThemeProvider
       attribute="class"
@@ -17,9 +13,7 @@ export async function GlobalProviders({ children }: Props) {
       enableSystem
       disableTransitionOnChange
     >
-      <TodoListProvider tasks={response.data ? (response.data as Task[]) : []}>
-        {children}
-      </TodoListProvider>
+      <TodoListProvider>{children}</TodoListProvider>
     </ThemeProvider>
   );
 }

@@ -1,7 +1,0 @@
-POST http://localhost:4000/tasks
-
-{
-  "task": "Task 1",
-  "date": "2024-08-24T11:25:22.329Z",
-  "completed": false
-}

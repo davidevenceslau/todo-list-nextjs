@@ -1,7 +1,0 @@
-PUT http://localhost:4000/tasks/78d2
-
-{
-  "task": "Tarefa 1",
-  "createDate": "2024-08-25T20:18:08.789Z",
-  "completed": true
-}

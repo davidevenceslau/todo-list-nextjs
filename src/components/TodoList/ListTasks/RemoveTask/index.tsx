@@ -1,48 +1,37 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { GoTrash } from "react-icons/go";
-import { useToastNotificationApi } from "@/hooks/useToastNotificationApi";
+import { useToastNotification } from "@/hooks/useToastNotification";
 import { ModalConfirm } from "@/components/modais/ModalConfirm";
-import { useSubmitFormAction } from "@/hooks/useSubmitFormAction";
-import { DELAY_API_TIME_MS } from "@/constants";
 import { useTodoList } from "@/contexts/TodoListContext/useTodoList";
+import { useTodoAction } from "@/hooks/useTodoAction";
 
 type RemoveTaskProps = {
   task: Task;
   tooglePendingTask: (pending: boolean, task?: TaskId) => void;
+  isPendingTask: boolean;
 };
 
-export function RemoveTask({ task, tooglePendingTask }: RemoveTaskProps) {
+export function RemoveTask({
+  task,
+  tooglePendingTask,
+  isPendingTask,
+}: RemoveTaskProps) {
   const { removeTask } = useTodoList();
-  const { action, state, onSubmit, pending } = useSubmitFormAction(
-    removeTask,
-    DELAY_API_TIME_MS,
+  const [actionParams, setActionParams] = useState<string>("");
+  const { pending, response } = useTodoAction(
+    () => removeTask(actionParams),
+    actionParams,
   );
-  useToastNotificationApi(state);
+  useToastNotification(response);
+
   const [showModalConfirm, setShowModalConfirm] = useState(false);
-  const formUseRef = useRef<HTMLFormElement | null>(null);
 
   const modalConfirmationMessageLength = 30;
 
-  const handleOnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    action(formData);
-    if (typeof onSubmit === "function") {
-      onSubmit();
-    }
-  };
-
   const onRemoveTask = () => {
-    const form = formUseRef.current;
-    const e = new Event("submit", {
-      bubbles: true,
-      cancelable: true,
-    });
-    if (form) {
-      form.dispatchEvent(e);
-    }
+    setActionParams(task.id);
   };
 
   const onModalConfirm = () => {
@@ -60,18 +49,18 @@ export function RemoveTask({ task, tooglePendingTask }: RemoveTaskProps) {
 
   return (
     <>
-      <form ref={formUseRef} onSubmit={handleOnSubmit}>
+      <form>
         <input type="hidden" name="id" value={task.id} />
         <GoTrash
-          className="cursor-pointer text-primay"
+          className={`text-primay ${isPendingTask ? "cursor-default opacity-50" : "cursor-pointer"}`}
           title="Excluir Tarefa"
-          onClick={() => setShowModalConfirm(true)}
+          onClick={() => !isPendingTask && setShowModalConfirm(true)}
         />
       </form>
       {showModalConfirm && (
         <ModalConfirm
           title={`Exluir tarefa?`}
-          message={`Confirmar a exclusão da tarefa "${task?.task.length > modalConfirmationMessageLength ? `${task?.task.slice(0, modalConfirmationMessageLength)}...` : task?.task}".\n Essa ação não pode ser revertida.`}
+          message={`Confirmar a exclusão da tarefa "${task?.title.length > modalConfirmationMessageLength ? `${task?.title.slice(0, modalConfirmationMessageLength)}...` : task?.title}".\n Essa ação não pode ser revertida.`}
           btnConfirmText="Excluir"
           onCancel={() => setShowModalConfirm(false)}
           onConfirm={() => onModalConfirm()}

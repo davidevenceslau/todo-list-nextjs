@@ -4,9 +4,9 @@
 ## Sobre o projeto
 O projeto Lista de Tarefas (To-do List), tem como o principal propósito aplicar os novos recursos do Next.js, está sendo utilizado Tailwind CSS para aplicar estilizações dos templates e aplicado boas práticas voltadas padrões, qualidade de código (Código limpo, Princípios SOLID, Design Patterns), performance, segurança e experiência do usuário.
 
-Neste momento está na fase MVP, contemplando as funcionalidades básicas, sendo: Cadastro e exclusão de tarefas, Ordernação pelas mais recentes, Marcar tarefas concluídas e Modo Escuro. No decorrer haverá implementações técnicas como Testes Unitários, DevOps etc., e novas funcionalidades serão implementadas, como Editar tarefa, Agrupamento por dia, Categoria/filtro por categoria etc.
+Neste momento está na fase MVP, contemplando as funcionalidades básicas, sendo: Cadastro e exclusão de tarefas, ordernação pelas tarefas mais recentes, concluir tarefas, modo escuro. No decorrer haverá implementações técnicas como Testes Unitários, DevOps etc., e novas funcionalidades serão implementadas, como editar tarefa, agrupamento por dia, filtros etc.
 
-Por enquanto está sendo possível o acesso local, porém assim que for desenvolvido o acesso multiusuário, subirei e disponibilizarei em um link público.
+Link: [https://todo-list-nextjs-psi.vercel.app](https://todo-list-nextjs-psi.vercel.app)
 
 - Nota:
 Quanto ao layout, me inspirei em um que encontrei na comunidade do Figma, que pode ser utilizado e publicado, link [aqui](https://www.figma.com/design/Jqrkvl2WBjzwFHzIayAcG2/Interactive-To-Do-List-Prototype-with-variables-(Community)?node-id=13-1596&t=TKVcEgdj7G00w3di-0).
