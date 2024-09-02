@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "mock-api": "npx json-server mock-api/db.json --port 4000"
+    "host": "HOST=192.168.0.116 PORT=3000 next dev"
   },
   "dependencies": {
     "@hotjar/browser": "^1.0.9",

@@ -19,6 +19,10 @@ export default async function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang="pt-BR">
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      />
       <body
         className={`${kalam.className} flex h-screen bg-body-background dark:bg-body-dark-background`}
       >

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  max-height: 100dvh;
+}
+
 @layer components {
   .todo-list-section-container {
     height: calc(100% - (130px + 140px + 40px)); /* subtracted height from header, footer and padding space */
