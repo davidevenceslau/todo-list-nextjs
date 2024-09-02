@@ -1,25 +1,13 @@
 "use client";
 
-import { ApiResponse } from "@/api/types";
 import { createContext } from "react";
 
 export type TodoListContextProps = {
+  isInitialLoading: boolean;
   tasks: Task[];
-  addTask: (
-    state: object,
-    formData: FormData,
-    delay?: number,
-  ) => Promise<ApiResponse>;
-  completedTask: (
-    state: object,
-    formData: FormData,
-    delay?: number,
-  ) => Promise<ApiResponse>;
-  removeTask: (
-    state: object,
-    formData: FormData,
-    delay?: number,
-  ) => Promise<ApiResponse>;
+  addTask: (taskName: string) => Promise<TodoListActionResponse>;
+  completedTask: (id: string) => Promise<TodoListActionResponse>;
+  removeTask: (id: string) => Promise<TodoListActionResponse>;
 };
 
 export const TodoListContext = createContext<TodoListContextProps>(

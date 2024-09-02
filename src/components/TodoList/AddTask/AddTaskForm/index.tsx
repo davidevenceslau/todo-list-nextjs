@@ -1,38 +1,32 @@
-import { useEffect, useState } from "react";
-import { ApiResponse } from "@/api/types";
-import { useToastNotificationApi } from "@/hooks/useToastNotificationApi";
 import { Button } from "@/components/common/Button";
+import { useEffect, useState } from "react";
 
 type AddTaskFormProps = {
-  action: (payload: FormData) => void;
-  state: ApiResponse;
-  onSubmit: () => void;
-  pending: boolean; // set in onSubmit
+  onSubmit: (formData: FormData) => void;
+  pending: boolean;
+  isResetForm: boolean;
 };
 
 export function AddTaskForm({
-  action,
-  state,
   onSubmit,
   pending,
+  isResetForm,
 }: AddTaskFormProps) {
-  const [value, setValue] = useState("");
-  useToastNotificationApi(state);
+  const [title, setTitle] = useState("");
 
   const handleOnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    action(formData);
     if (typeof onSubmit === "function") {
-      onSubmit();
+      onSubmit(formData);
     }
   };
 
   useEffect(() => {
-    if (state.success) {
-      setValue("");
+    if (isResetForm) {
+      setTitle("");
     }
-  }, [state]);
+  }, [isResetForm]);
 
   return (
     <>
@@ -40,19 +34,19 @@ export function AddTaskForm({
         <div className="w-[100%] gap-4 flex justify-between items-center flex-col md:flex-row">
           <input
             type="text"
-            name="task"
+            name="title"
             placeholder="Digite uma nova tarefa aqui..."
             className="w-[100%] p-2 placeholder-secondary-text focus:outline-none focus:ring focus:ring-neutral-200 bg-white dark:bg-body-dark-background text-2xl read-only:opacity-50"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            readOnly={pending}
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
             autoComplete="off"
+            required
           />
           <Button
             label={pending ? "" : "Adicionar tarefa"}
             type="submit"
             isLoading={pending}
-            disabled={pending || !value.length}
+            disabled={pending}
           />
         </div>
       </form>

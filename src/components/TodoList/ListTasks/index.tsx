@@ -6,10 +6,11 @@ import { Loading } from "@/components/common/Loading";
 import { CompleteTask } from "./CompleteTask";
 import { RemoveTask } from "./RemoveTask";
 import { PendingTask } from "./types";
+import { ListTasksLoading } from "./ListTasksLoading";
 import "./styles.css";
 
 export function ListTasks() {
-  const { tasks } = useTodoList();
+  const { isInitialLoading, tasks } = useTodoList();
   const [pendingTask, setPendingTask] = useState<PendingTask>({
     pending: false,
   });
@@ -21,9 +22,16 @@ export function ListTasks() {
     });
   };
 
-  const isPending = (taskId: TaskId) => {
-    return pendingTask.pending && pendingTask.taskId === taskId;
+  const isPending = (taskId?: TaskId) => {
+    if (taskId) {
+      return pendingTask.pending && pendingTask.taskId === taskId;
+    }
+    return pendingTask.pending;
   };
+
+  if (isInitialLoading) {
+    return <ListTasksLoading />;
+  }
 
   return (
     <>
@@ -36,6 +44,7 @@ export function ListTasks() {
                   <CompleteTask
                     task={task}
                     tooglePendingTask={tooglePendingTask}
+                    isPendingTask={isPending()}
                   />
                   {isPending(task.id) && (
                     <div>
@@ -45,11 +54,12 @@ export function ListTasks() {
                   <span
                     className={`text-black text-2xl dark:text-secondary-text ${(isPending(task.id) || task.completed) && "opacity-50"} ${task.completed && "decoration-1 line-through"}`}
                   >
-                    {task.task}
+                    {task.title}
                   </span>
                   <RemoveTask
                     task={task}
                     tooglePendingTask={tooglePendingTask}
+                    isPendingTask={isPending()}
                   />
                 </li>
               ))}
