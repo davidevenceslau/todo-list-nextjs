@@ -8,7 +8,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Lista de Tarefas",
-  description: "Next 14, Tailwind, Dark Mode",
+  description:
+    "Lista de Tarefas está na fase MVP, desenvolvido utilizando em Next 14, Typescript, Tailwind CSS etc.",
 };
 
 export default async function RootLayout({
@@ -21,8 +22,14 @@ export default async function RootLayout({
       <body
         className={`${kalam.className} flex h-screen bg-body-background dark:bg-body-dark-background`}
       >
-        <GlobalProviders>{children}</GlobalProviders>
-        <AnalysisAndMonitoringTools />
+        <GlobalProviders>
+          <main className="w-[100%] h-[100%] min-w-[320px] sm:w-[90%] sm:h-[90%] md:w-[80%] md:h-[80%] m-auto px-1 bg-white dark:bg-dark-background shadow-lg relative">
+            {children}
+          </main>
+        </GlobalProviders>
+        {process.env.NODE_ENV === "production" && (
+          <AnalysisAndMonitoringTools />
+        )}
         <ToastContainer />
       </body>
     </html>

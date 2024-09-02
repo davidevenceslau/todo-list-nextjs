@@ -1,31 +1,30 @@
-import { ApiResponse } from "@/api/types";
 import { useEffect, useState } from "react";
 import { toast, ToastOptions } from "react-toastify";
 
-export const enum TypeToSenderToastNotificationApi {
+export const enum TypeToSenderToastNotification {
   SUCCESS = "success",
   ERROR = "error",
   ALL = "all", // "success" and "error"
 }
 
-export const autoCloseTimeMs = 5000;
+export const autoCloseTimeMs = 3000;
 
-export function useToastNotificationApi(
-  state: ApiResponse,
+export function useToastNotification(
+  response: TodoListActionResponse | undefined,
   typeToSender?:
-    | TypeToSenderToastNotificationApi.SUCCESS
-    | TypeToSenderToastNotificationApi.ERROR
-    | TypeToSenderToastNotificationApi.ALL,
+    | TypeToSenderToastNotification.SUCCESS
+    | TypeToSenderToastNotification.ERROR
+    | TypeToSenderToastNotification.ALL,
 ) {
   const [sendedToastNotification, setSendedToastNotification] = useState(false);
 
   const getType = () => {
-    const type = state.success ? "success" : "error";
+    const type = response?.success ? "success" : "error";
     return type as ToastType;
   };
 
   const sendToastNotificationToast = () => {
-    const message = state.message;
+    const message = response?.message;
     const mode = "light";
     const toastOptions: ToastOptions = {
       position: "top-right",
@@ -38,18 +37,18 @@ export function useToastNotificationApi(
     };
 
     if (
-      state.success &&
+      response?.success &&
       (!typeToSender ||
-        typeToSender === TypeToSenderToastNotificationApi.SUCCESS ||
-        typeToSender === TypeToSenderToastNotificationApi.ALL)
+        typeToSender === TypeToSenderToastNotification.SUCCESS ||
+        typeToSender === TypeToSenderToastNotification.ALL)
     ) {
       toast.success(message, toastOptions);
       setSendedToastNotification(true);
     } else if (
-      !state.success &&
+      !response?.success &&
       (!typeToSender ||
-        typeToSender === TypeToSenderToastNotificationApi.ERROR ||
-        typeToSender === TypeToSenderToastNotificationApi.ALL)
+        typeToSender === TypeToSenderToastNotification.ERROR ||
+        typeToSender === TypeToSenderToastNotification.ALL)
     ) {
       toast.error(message, toastOptions);
       setSendedToastNotification(true);
@@ -57,10 +56,10 @@ export function useToastNotificationApi(
   };
 
   useEffect(() => {
-    if (state.message) {
+    if (response?.message) {
       sendToastNotificationToast();
     }
-  }, [state]);
+  }, [response]);
 
   useEffect(() => {
     if (sendedToastNotification) {
@@ -70,7 +69,7 @@ export function useToastNotificationApi(
 
   return {
     sendedToastNotification,
-    message: state.message,
+    message: response?.message,
     type: getType(),
   };
 }
