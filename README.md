@@ -44,8 +44,5 @@ Link do repositório para que possa ser feito o clone localmente.
 ### 2. Instale as dependências:
 `yarn install`
 
-### 3. Rodar o Json Server
-`yarn mock-api`
-
-### 4. Execute o Projeto:
+### 3. Execute o Projeto:
 `yarn dev`
