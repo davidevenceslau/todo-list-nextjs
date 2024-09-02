@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { Viewport } from "next";
 import { ToastContainer } from "react-toastify";
 import { GlobalProviders } from "@/providers";
 import { kalam } from "@/fonts";
@@ -12,6 +13,13 @@ export const metadata: Metadata = {
     "Lista de Tarefas está na fase MVP, desenvolvido utilizando em Next 14, Typescript, Tailwind CSS etc.",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -19,10 +27,6 @@ export default async function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang="pt-BR">
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-      />
       <body
         className={`${kalam.className} flex h-screen bg-body-background dark:bg-body-dark-background`}
       >
